@@ -1,0 +1,30 @@
+<table class="table table- table-striped table-bordered table-dark table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>description</th>
+            <th>justification</th>
+            <th>rejectionReason</th>
+            <th>deliveryMode</th>
+            <th>status</th>
+            <th>total</th>
+            <th>userId</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests">
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.justification}}</td>
+            <td>{{request.rejectionReason}}</td>
+            <td>{{request.deliveryMode}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+            <td>{{request.userId}}</td>
+            <td>
+                <a class="text-white" routerLink="/requests/detail/{{request.id}}">Detail</a> | <a class="text-white" routerLink="/requests/edit/{{request.id}}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

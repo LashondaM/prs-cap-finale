@@ -1,0 +1,46 @@
+
+<button class="btn btn-primary btn-1"><a class="text-white" routerLink="/vendors/list">Back To List</a></button>
+
+<table class="table table-striped table-bordered table-dark table-hover">
+    <tbody>
+        <tr>
+            <td>id</td>
+            <!-- <td>{{vendor.id}}</td> -->
+            <td>{{vendor.id}}</td>
+        </tr>
+        <tr>
+            <td>code</td>
+            <td>{{vendor.code}}</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>{{vendor.name}}</td>
+        </tr>
+        <tr>
+            <td>address</td>
+            <td>{{vendor.address}}</td>
+        </tr>
+        <tr>
+            <td>city</td>
+            <td>{{vendor.city}}</td>
+        </tr>
+        <tr>
+            <td>state</td>
+            <td>{{vendor.state}}</td>
+        </tr>
+        <tr>
+            <td>zip</td>
+            <td>{{vendor.zip}}</td>
+        </tr>
+        <tr>
+            <td>phone</td>
+            <td>{{vendor.phone}}</td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>{{vendor.email}}</td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-success btn-3"><a class="text-white" routerLink="/vendors/create">Create</a></button>
+<button class="btn btn-danger btn-2" onclick="remove()">Delete</button>

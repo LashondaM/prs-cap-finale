@@ -1,0 +1,41 @@
+
+<button class="btn btn-primary btn-1"><a class="text-white" routerLink="/requests/list">Back To List</a></button>
+
+<table class="table table-striped table-bordered table-dark table-hover">
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>{{request.id}}</td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td>{{request.description}}</td>
+        </tr>
+        <tr>
+            <td>justification</td>
+            <td>{{request.justification}}</td>
+        </tr>
+        <tr>
+            <td>rejectionReason</td>
+            <td>{{request.rejectionReason}}</td>
+        </tr>
+        <tr>
+            <td>deliveryMode</td>
+            <td>{{request.deliveryMode}}</td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>{{request.status}}</td>
+        </tr>
+        <tr>
+            <td>total</td>
+            <td>{{request.total}}</td>
+        </tr>
+        <tr>
+            <td>userId</td>
+            <td>{{request.userId}}</td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-success btn-3"><a class="text-white" routerLink="/requests/create">Create</a></button>
+<button class="btn btn-danger btn-2" onclick="remove()">Delete</button>

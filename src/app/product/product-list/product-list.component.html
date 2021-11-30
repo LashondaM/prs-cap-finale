@@ -1,0 +1,28 @@
+<table class="table table- table-striped table-bordered table-dark table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>partNbr</th>
+            <th>name</th>
+            <th>price</th>
+            <th>unit</th>
+            <th>photoPath</th>
+            <th>vendorId</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.partNbr}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.unit}}</td>
+            <td>{{product.photoPath}}</td>
+            <td>{{product.vendorId}}</td>
+            <td>
+                <a class="text-white" routerLink="/products/detail/{{product.id}}">Detail</a> | <a class="text-white" routerLink="/products/edit/{{product.id}}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

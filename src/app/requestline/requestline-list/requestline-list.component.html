@@ -1,0 +1,18 @@
+<table class="table table- table-striped table-bordered table-dark table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>quantity</th>
+            <th>requestId</th>
+            <th>productId</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let requestline of requestlines">
+            <td>{{requestline.id}}</td>
+            <td>{{requestline.quantity}}</td>
+            <td>{{requestline.requestId}}</td>
+            <td>{{requestline.productId}}</td>
+        </tr>
+    </tbody>
+</table>

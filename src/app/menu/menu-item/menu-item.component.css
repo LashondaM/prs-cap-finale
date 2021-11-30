@@ -1,0 +1,13 @@
+a{
+    text-decoration: none;
+    color: azure;
+    /* background: rgb(4, 140, 150); */
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+.aa:hover{
+    /* background: rgb(4, 86, 92); */
+    text-decoration: underline;
+    color: azure;
+}

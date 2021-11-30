@@ -1,0 +1,12 @@
+nav{
+    background: rgb(224, 94, 7);
+    margin-bottom: 70px;
+    height: 65px;
+}
+
+.navbar-brand{
+    font-size: 25px;
+    font-weight: 500;
+    border: solid 2px white;
+    padding: 0 10px;
+}
