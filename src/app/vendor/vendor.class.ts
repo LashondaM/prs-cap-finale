@@ -11,15 +11,15 @@ export class Vendor {
     // isReviewer: boolean = true;
     // isAdmin: boolean = true;
 
-    constructor(id: number, code: string, name: string, address: string, city: string, state: string, zip: string, phone: string, email: string) {
-        this.id = id;
-        this.code = code;
-        this.name = name;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.phone = phone;
-        this.email = email;
+    constructor( /*id: number, code: string, name: string, address: string, city: string, state: string, zip: string, phone: string, email: string*/ ) {
+        // this.id = id;
+        // this.code = code;
+        // this.name = name;
+        // this.address = address;
+        // this.city = city;
+        // this.state = state;
+        // this.zip = zip;
+        // this.phone = phone;
+        // this.email = email;
     }
 }

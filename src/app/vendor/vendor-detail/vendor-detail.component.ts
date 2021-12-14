@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor/vendor.service';
 
@@ -12,7 +12,22 @@ export class VendorDetailComponent implements OnInit {
 
   vendor!: Vendor;
 
-  constructor(private route: ActivatedRoute, private vendorsvc: VendorService) { }
+  verifyDelete: boolean = false;
+
+  constructor(private route: ActivatedRoute, private vendorsvc: VendorService, private router: Router) { }
+
+  delete(): void{
+    this.verifyDelete = !this.verifyDelete;
+  }
+
+  verify(): void{
+    this.vendorsvc.remove(this.vendor.id).subscribe({
+      next: res => {
+        console.debug("User deleted successfully!");
+        this.router.navigateByUrl("/vendors/list");
+      }
+    })
+  }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];

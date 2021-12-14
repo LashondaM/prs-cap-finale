@@ -2,3 +2,21 @@ table{
     margin-left: 350px;
     width: 1000px;
 }
+
+a{
+    text-decoration: none;
+}
+
+.btn-1{
+    margin-left: 500px;
+    margin-bottom: 15px;
+}
+
+.btn-2{
+    margin-left: 507px;
+
+}
+
+.btn-3{
+    margin-left: 350px;
+}

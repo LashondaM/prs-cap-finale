@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Request } from '../request.class';
+import { RequestService } from '../request/request.service';
 
 @Component({
   selector: 'app-request-create',
@@ -7,7 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestCreateComponent implements OnInit {
 
-  constructor() { }
+  request:Request = new Request();
+  constructor(private requestsvc: RequestService, private router: Router) { }
+
+  save(): void{
+    this.requestsvc.create(this.request).subscribe({
+      next: res => {
+        console.log(res);
+        this.router.navigateByUrl("/requests/list");
+      }
+    })
+  }
 
   ngOnInit(): void {
   }

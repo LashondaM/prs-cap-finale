@@ -21,4 +21,16 @@ export class VendorService {
     getByPk(id: number): Observable<Vendor>{
       return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<Vendor>;
   }
+
+    create(vendor: Vendor): Observable<Vendor>{
+      return this.httpsvc.post(`${this.baseurl}`, vendor) as Observable<Vendor>;
+  }
+
+  change(vendor: Vendor): Observable<any> {
+    return this.httpsvc.put(`${this.baseurl}/${vendor.id}`, vendor) as Observable<any>;
+  }
+
+  remove(id: number): Observable<any>{
+      return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<any>;
+  }
 }

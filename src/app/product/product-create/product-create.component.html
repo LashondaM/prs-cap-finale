@@ -5,36 +5,46 @@
         <tr>
             <td>id</td>
             <td>
-                <!-- <input class="text-center" value="0" type="text" size=10 readonly> -->
+                <input [(ngModel)]="product.id" class="text-center" value="0" type="text" size=10 disabled>
             </td>
         </tr>
         <tr>
             <td>partNbr</td>
             <td>
-                <!-- <input class="text-center" type="text" size=30> -->
+                <input [(ngModel)]="product.partNbr" class="text-center" type="text" size=30>
             </td>
         </tr>
         <tr>
             <td>name</td>
-                <!-- <input class="text-center" type="text" size=30> -->
+            <td>    
+                <input [(ngModel)]="product.name" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>price</td>
-                <!-- <input class="text-center" type="text" size=30> -->
+            <td>    
+                <input [(ngModel)]="product.price" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>unit</td>
-            <!-- <input class="text-center" type="text" size=30> -->
+            <td>
+                <input [(ngModel)]="product.unit" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>photoPath</td>
-            <!-- <input class="text-center" type="text" size=30> -->
+            <td>
+                <input [(ngModel)]="product.photoPath" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>vendorId</td>
-            <!-- <input class="text-center" type="text" size=10> -->
+            <td>
+                <input [(ngModel)]="product.vendorId" class="text-center" type="text" size=10>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<button class="btn btn-2 btn-secondary">Save</button>
+<button (click)="save()" class="btn btn-2 btn-secondary">Save</button>

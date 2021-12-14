@@ -1,13 +1,17 @@
+import { Product } from "../product/product.class";
+import { Request } from "../request/request.class";
+
 export class Requestline {
     id: number = 0;
-    quantity: number = 0;
-    requestId: number = 0;
-    productId: number = 0;
+    quantity: number = 1;
 
-    constructor(id: number, quantity: number, requestId: number, productId: number) {
-        this.id = id;
-        this.quantity = quantity;
-        this.requestId = requestId;
-        this.productId = productId;
+    requestId: number = 0;
+    request?: Request;
+
+    productId: number = 0;
+    product?: Product;
+
+    constructor() {
+        
     }
 }

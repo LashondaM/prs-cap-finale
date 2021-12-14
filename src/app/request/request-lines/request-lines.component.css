@@ -1,0 +1,28 @@
+table{
+    margin-left: 250px;
+    width: 1200px;
+    margin-bottom: 70px;
+}
+
+a{
+    text-decoration: none;
+}
+
+ .btn-1{
+    margin-left: 250px;
+    margin-bottom: 15px;
+}
+/*
+.btn-2{
+    margin-left: 500px;
+
+} */
+
+.btn-3{
+    margin-left: 250px;
+    margin-bottom: 10px;
+}
+
+h4{
+    margin-left: 250px;
+}

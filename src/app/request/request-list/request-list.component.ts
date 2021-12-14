@@ -9,12 +9,12 @@ import { RequestService } from '../request/request.service';
 })
 export class RequestListComponent implements OnInit {
 
-  requests: Request[] = []
+  requests: Request[] = [];
 
-  constructor(private usrsvc: RequestService) { }
+  constructor(private reqs: RequestService) { }
 
   ngOnInit(): void {
-    this.usrsvc.list().subscribe(
+    this.reqs.list().subscribe(
       res => {
         console.debug("Requests:", res)
         this.requests = res;

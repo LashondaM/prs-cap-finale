@@ -5,40 +5,52 @@
         <tr>
             <td>id</td>
             <td>
-                <!-- <input class="text-center" type="text" size=10 readonly> -->
+                <input [(ngModel)]="request.id" class="text-center" type="text" size=10 disabled>
             </td>
         </tr>
         <tr>
             <td>description</td>
             <td>
-                <!-- <input class="text-center" type="text" size=50> -->
+                <input [(ngModel)]="request.description" class="text-center" type="text" size=50>
             </td>
         </tr>
         <tr>
             <td>justification</td>
-                <!-- <input class="text-center" type="text" size=30> -->
+            <td>
+                <input [(ngModel)]="request.justification" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>rejectionReason</td>
-                <!-- <input class="text-center" type="text" size=60> -->
+            <td>
+                <input [(ngModel)]="request.rejectionReason" class="text-center" type="text" size=60>
+            </td>
         </tr>
         <tr>
             <td>deliveryMode</td>
-            <!-- <input class="text-center" type="text" size=30> -->
+            <td>
+                <input [(ngModel)]="request.deliveryMode" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>status</td>
-            <!-- <input class="text-center" type="text" size=30> -->
+            <td>
+                <input [(ngModel)]="request.status" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>total</td>
-            <!-- <input class="text-center" type="text" size=10> -->
+            <td>
+                <input [(ngModel)]="request.total" class="text-center" type="text" size=10>
+            </td>
         </tr>
         <tr>
             <td>userId</td>
-            <!-- <input class="text-center" type="text" size=30> -->
+            <td>
+                <input [(ngModel)]="request.userId" class="text-center" type="text" size=30>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<button class="btn btn-2 btn-secondary">Save</button>
+<button (click)="save()" class="btn btn-2 btn-secondary">Save</button>

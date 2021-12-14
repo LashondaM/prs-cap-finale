@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Request } from '../request.class';
 import { RequestService } from '../request/request.service';
 
@@ -10,9 +10,24 @@ import { RequestService } from '../request/request.service';
 })
 export class RequestDetailComponent implements OnInit {
 
+  verifyDelete: boolean = false;
+
   request!: Request;
 
-  constructor(private route: ActivatedRoute, private requestsvc: RequestService) { }
+  constructor(private route: ActivatedRoute, private requestsvc: RequestService, private router: Router) { }
+
+  delete(): void{
+    this.verifyDelete = !this.verifyDelete;
+  }
+
+  verify(): void{
+    this.requestsvc.remove(this.request.id).subscribe({
+      next: res => {
+        console.debug("Request deleted successfully!");
+        this.router.navigateByUrl("/requests/list");
+      }
+    })
+  }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];

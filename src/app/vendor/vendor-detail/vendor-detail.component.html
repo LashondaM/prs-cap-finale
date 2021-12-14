@@ -42,5 +42,9 @@
         </tr>
     </tbody>
 </table>
-<button class="btn btn-success btn-3"><a class="text-white" routerLink="/vendors/create">Create</a></button>
-<button class="btn btn-danger btn-2" onclick="remove()">Delete</button>
+
+<button class="btn btn-danger btn-2" (click)="delete()">Delete</button> 
+<span *ngIf="verifyDelete">
+    <b><span> | </span></b>
+    <button (click)="verify()" class="btn btn-danger">Verify Delete</button>
+</span>

@@ -5,49 +5,59 @@
         <tr>
             <td>id</td>
             <td>
-                <!-- <input class="text-center" type="text" size=10> -->
+                <input [(ngModel)]="user.id" class="text-center" type="text" size=10 disabled>
             </td>
         </tr>
         <tr>
             <td>username</td>
             <td>
-                <!-- <input class="text-center" type="text" size=30> -->
+                <input [(ngModel)]="user.username" class="text-center" type="text" size=30>
             </td>
         </tr>
         <tr>
             <td>password</td>
-            <!-- <input name="pass1" type="password" size=20> -->
+            <td>
+                <input [(ngModel)]="user.password" name="pass1" type="password" size=20>
+            </td>
             <!-- <input name="pass2" type="password" size=20> -->
         </tr>
         <tr>
-            <td>name</td>
-                <!-- <input class="text-center" type="text" size=30> -->
+            <td>firstname</td>
+            <td>
+                <input [(ngModel)]="user.firstname" class="text-center" type="text" size=30>
+            </td>
+        </tr>
+        <tr>
+            <td>lastname</td>
+            <td>
+                <input [(ngModel)]="user.lastname" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>Reviewer</td>
-                <!-- <input class="text-center" type="checkbox" size=10> -->
+            <td>
+                <input [(ngModel)]="user.isReviewer" class="text-center" type="checkbox" size=10>
+            </td>
         </tr>
         <tr>
             <td>Admin</td>
-            <!-- <input class="text-center" type="checkbox" size=10> -->
-        </tr>
-        <tr>
-            <td>state</td>
-            <!-- <input class="text-center" type="text" size=30> -->
-        </tr>
-        <tr>
-            <td>zip</td>
-            <!-- <input class="text-center" type="text" size=10> -->
+            <td>
+                <input [(ngModel)]="user.isAdmin" class="text-center" type="checkbox" size=10>
+            </td>
         </tr>
         <tr>
             <td>phone</td>
-            <!-- <input class="text-center" type="text" size=30> -->
+            <td>
+                <input [(ngModel)]="user.phone" class="text-center" type="text" size=30>
+            </td>
         </tr>
         <tr>
             <td>email</td>
-            <!-- <input class="text-center" type="text" size=50> -->
+            <td>
+                <input [(ngModel)]="user.email" class="text-center" type="text" size=50>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<button class="btn btn-2 btn-secondary">Save</button>
+<button (click)="save()" class="btn btn-2 btn-secondary">Save</button>

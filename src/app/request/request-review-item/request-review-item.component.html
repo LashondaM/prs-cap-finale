@@ -1,0 +1,56 @@
+<button class="btn btn-primary btn-1"><a class="text-white" routerLink="/requests/reviews">Back To List</a></button>
+
+<h4>Request</h4>
+<table class="table table-striped table-bordered table-dark">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>description</th>
+            <th>rejectionReason</th>
+            <th>status</th>
+            <th>total</th>
+            <th>user</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td><span [ngClass]="statusStyle">{{request.rejectionReason}}</span></td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+            <td>{{request.user?.username}}</td>
+            <td>
+                <button (click)="approve(request)" class="btn btn-info">Approve</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>Requestlines</h4>
+<table class="table table-striped table-bordered table-dark table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>product</th>
+            <th>quantity</th>
+            <th>price</th>
+            <th>subtotal</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="request">
+        <tr *ngFor="let rl of request.requestLines">
+            <td>{{rl.id}}</td>
+            <td>{{rl.product !== undefined ? rl.product.name : "missing"}}</td>
+            <td>{{rl.quantity}}</td>
+            <td>{{(rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
+            <td>{{rl.quantity * (rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="showRejectionReason()" class="btn btn-2 btn-danger ">Reject</button>
+    <span *ngIf="showRejection">
+        <span> | <input [(ngModel)]="request.rejectionReason" size="30" name="rejectionReason"></span>
+        <span> | <button (click)="reject(request)" class="btn btn-3 btn-danger">Verify Reject</button></span>
+    </span>

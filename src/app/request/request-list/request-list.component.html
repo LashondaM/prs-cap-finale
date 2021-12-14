@@ -8,7 +8,7 @@
             <th>deliveryMode</th>
             <th>status</th>
             <th>total</th>
-            <th>userId</th>
+            <th>user</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -21,10 +21,12 @@
             <td>{{request.deliveryMode}}</td>
             <td>{{request.status}}</td>
             <td>{{request.total}}</td>
-            <td>{{request.userId}}</td>
+            <td>{{request.user?.username}}</td>
             <td>
-                <a class="text-white" routerLink="/requests/detail/{{request.id}}">Detail</a> | <a class="text-white" routerLink="/requests/edit/{{request.id}}">Edit</a>
+                <a class="text-white" routerLink="/requests/detail/{{request.id}}">Detail</a> | <a class="text-white" routerLink="/requests/edit/{{request.id}}">Edit</a> | <a class="text-white" routerLink="/requests/lines/{{request.id}}">Lines</a>
             </td>
         </tr>
     </tbody>
 </table>
+
+<button class="btn btn-success btn-3"><a class="text-white" routerLink="/requests/create">Create</a></button>

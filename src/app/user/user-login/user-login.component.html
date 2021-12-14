@@ -1,0 +1,28 @@
+   
+        <table class="table table-dark table-striped table-hover table-borderless">
+                <thead>
+                <tr>
+                    <th class="">Login</th>
+                    <th class="">{{message}}&nbsp;</th>
+                </tr>
+                </thead>
+                <!-- <tr><td>&nbsp;</td></tr> -->
+                <tbody>
+                <tr>
+                    <td>Username:</td>
+                    <td>
+                        <input [(ngModel)]="username" size=20 name="username" autocomplete="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input [(ngModel)]="password" size=20 type="password" name="password" autocomplete="current-password">
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <th class="">{{message}}&nbsp;</th>
+                </tr> -->
+            </tbody>
+        </table>
+        <button (click)="login()" type="submit" class="btn btn-1 btn-primary">Login</button>

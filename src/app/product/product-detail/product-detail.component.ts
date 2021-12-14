@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product.class';
 import { ProductService } from '../product/product.service';
 
@@ -10,9 +10,24 @@ import { ProductService } from '../product/product.service';
 })
 export class ProductDetailComponent implements OnInit {
 
+  verifyDelete: boolean = false;
+
   product!: Product;
 
-  constructor(private route: ActivatedRoute, private productsvc: ProductService) { }
+  constructor(private route: ActivatedRoute, private productsvc: ProductService, private router: Router) { }
+
+  delete(): void{
+    this.verifyDelete = !this.verifyDelete;
+  }
+
+  verify(): void{
+    this.productsvc.remove(this.product.id).subscribe({
+      next: res => {
+        console.debug("Product deleted successfully!");
+        this.router.navigateByUrl("/products/list");
+      }
+    })
+  }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];

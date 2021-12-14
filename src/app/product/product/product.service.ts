@@ -21,4 +21,17 @@ export class ProductService {
     getByPk(id: number): Observable<Product>{
       return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<Product>;
   }
+
+    create(product: Product): Observable<Product>{
+      return this.httpsvc.post(`${this.baseurl}`, product) as Observable<Product>;
+  }
+
+  change(product: Product): Observable<any> {
+    return this.httpsvc.put(`${this.baseurl}/${product.id}`, product) as Observable<any>;
+  }
+
+  remove(id: number): Observable<any>{
+      return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<any>;
+  }
+
 }

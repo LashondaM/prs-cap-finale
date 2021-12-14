@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +11,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 import { E404Component } from './e404/e404.component';
 
@@ -25,6 +26,10 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
+
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 
 import { ProductComponent } from './product/product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
@@ -39,7 +44,16 @@ import { RequestlineCreateComponent } from './requestline/requestline-create/req
 
 import { MenuComponent } from './menu/menu/menu.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
+
 import { DisplayBooleanPipe } from './display-boolean.pipe';
+
+import { HomeComponent } from './home/home/home.component';
+import { AboutComponent } from './about/about/about.component';
+import { AppInitService } from './app-init.service';
+
+export const startupServiceFactory = (appinit: AppInitService) => {
+  return () => appinit.getSettings();
+}
 
 @NgModule({
   declarations: [
@@ -71,13 +85,26 @@ import { DisplayBooleanPipe } from './display-boolean.pipe';
     RequestlineEditComponent,
     RequestlineCreateComponent,
     RequestEditComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    UserLoginComponent,
+    HomeComponent,
+    AboutComponent,
+    RequestLinesComponent,
+    RequestReviewItemComponent,
+    RequestReviewListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AppInitService, {
+      provide: APP_INITIALIZER,
+      useFactory: startupServiceFactory,
+      deps: [AppInitService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
